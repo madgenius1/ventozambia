@@ -59,7 +59,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex space-x-4 px-4">
+                <div className="hidden md:flex justify-end space-x-4 px-4">
                     <NavigationMenu>
                         <NavigationMenuList className="space-x-4">
                             {/* Products */}
@@ -107,7 +107,7 @@ export default function Navbar() {
                                 <NavigationMenuLink asChild>
                                     <Link
                                         href="/resources"
-                                        className="font-semibold text-md px-2 py-1 rounded-md hover:bg-accent"
+                                        className="font-semibold text-lg px-2 py-2 rounded-md hover:bg-accent"
                                     >
                                         Resources
                                     </Link>
@@ -119,7 +119,7 @@ export default function Navbar() {
                                 <NavigationMenuLink asChild>
                                     <Link
                                         href="/company"
-                                        className="font-semibold text-md px-2 py-1 rounded-md hover:bg-accent"
+                                        className="font-semibold text-lg px-2 py-2 rounded-md hover:bg-accent"
                                     >
                                         Company
                                     </Link>
@@ -183,7 +183,7 @@ export default function Navbar() {
                     <li className="w-full">
                         <Link
                             href="/company"
-                            className="block px-4 py-2 font-semibold text-lg hover:bg-accent rounded-md"
+                            className="block px-4 py-2 font-semibold text-md hover:bg-accent rounded-md"
                             onClick={toggleMobileMenu}
                         >
                             Company
