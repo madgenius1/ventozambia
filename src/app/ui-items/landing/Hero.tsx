@@ -1,9 +1,14 @@
 "use client";
 
 import { motion } from "motion/react";
-import React from "react";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+
+// Define a type for the square data to improve type safety
+type Square = {
+  id: number;
+  src: string;
+};
 
 export default function Hero() {
   return (
@@ -35,7 +40,8 @@ export default function Hero() {
   );
 }
 
-const shuffle = (array) => {
+// Add a type for the 'array' parameter to resolve the TypeScript error
+const shuffle = (array: Square[]) => {
   let currentIndex = array.length,
     randomIndex;
 
@@ -52,7 +58,7 @@ const shuffle = (array) => {
   return array;
 };
 
-const squareData = [
+const squareData: Square[] = [
   {
     id: 1,
     src: "https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
