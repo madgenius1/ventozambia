@@ -1,50 +1,36 @@
-"use client";
+'use client'
 
 import { motion } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
-type Square = {
-  id: number;
-  src: string;
-};
-
-export default function Hero() {
+const ShuffleHero = () => {
   return (
-    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-6 max-w-screen-xl mx-auto">
-      <div className="space-y-3">
-        <h1 className="text-4xl lg:text-5xl md:text-4xl font-semibold text-neutral-950 dark:text-neutral-50">
-          Vento Zambia Limited
-        </h1>
-        <p className="text-sm lg:text-lg leading-relaxed text-slate-700 my-4 md:my-6">
-          Vento Zambia Limited is a leading specialized supplier of hydraulic lifting equipment, pumps, hydraulic maintenance tools, and flange management for the heavy industry sectors.
+    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+      <div>
+        <span className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
+          Better every day
+        </span>
+        <h3 className="text-4xl md:text-6xl font-semibold">
+          Let's change it up a bit
+        </h3>
+        <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nobis in
+          error repellat voluptatibus ad.
         </p>
-        <div className="flex flex-row items-center gap-4">
-          <Link
-            href="/quote"
-            className="bg-neutral-800 dark:bg-neutral-200 text-neutral-50 dark:text-neutral950 font-medium py-2 px-4 rounded transition-all hover:scale-95"
-          >
-            Get a Quote
-          </Link>
-          <Link
-            href="/contact"
-            className="bg-neutral-800 dark:bg-neutral-200 text-neutral-50 dark:text-neutral950 font-medium py-2 px-4 rounded transition-all hover:scale-95"
-          >
-            Contact Us
-          </Link>
-        </div>
+        <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
+          Find a class
+        </button>
       </div>
       <ShuffleGrid />
     </section>
   );
-}
+};
 
-// Add a type for the 'array' parameter to resolve the TypeScript error
-const shuffle = (array: Square[]) => {
+const shuffle = (array: (typeof squareData)[0][]) => {
   let currentIndex = array.length,
     randomIndex;
 
-  while (currentIndex !== 0) {
+  while (currentIndex != 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
@@ -57,7 +43,7 @@ const shuffle = (array: Square[]) => {
   return array;
 };
 
-const squareData: Square[] = [
+const squareData = [
   {
     id: 1,
     src: "https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
@@ -124,9 +110,8 @@ const squareData: Square[] = [
   },
 ];
 
-
 const generateSquares = () => {
-  return shuffle([...squareData]).map((sq) => (
+  return shuffle(squareData).map((sq) => (
     <motion.div
       key={sq.id}
       layout
@@ -141,26 +126,26 @@ const generateSquares = () => {
 };
 
 const ShuffleGrid = () => {
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const [squares, setSquares] = useState<JSX.Element[]>([]);
+  const timeoutRef = useRef<any>(null);
+  const [squares, setSquares] = useState(generateSquares());
 
   useEffect(() => {
-    // Define shuffleSquares inside useEffect to resolve the dependency warning.
-    // This ensures that `shuffleSquares` is stable for the hook.
-    const shuffleSquares = () => {
-      setSquares(generateSquares());
-      timeoutRef.current = setTimeout(shuffleSquares, 3000);
-    };
-
-    setSquares(generateSquares());
     shuffleSquares();
 
     return () => clearTimeout(timeoutRef.current);
   }, []);
 
+  const shuffleSquares = () => {
+    setSquares(generateSquares());
+
+    timeoutRef.current = setTimeout(shuffleSquares, 3000);
+  };
+
   return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-2">
-      {squares}
+    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+      {squares.map((sq) => sq)}
     </div>
   );
 };
+
+export default ShuffleHero;
