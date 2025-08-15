@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-// Define a type for the square data to improve type safety
 type Square = {
   id: number;
   src: string;
