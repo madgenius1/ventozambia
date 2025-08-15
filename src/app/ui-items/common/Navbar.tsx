@@ -28,7 +28,7 @@ const ListItem = ({ href, title, children }: ListItemProps) => (
         <NavigationMenuLink asChild>
             <Link
                 href={href}
-                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-red-700 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
             >
                 <div className="text-sm font-medium leading-none">{title}</div>
                 <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -64,7 +64,7 @@ export default function Navbar() {
                         <NavigationMenuList className="space-x-4">
                             {/* Products */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="font-semibold text-md">
+                                <NavigationMenuTrigger className="font-semibold text-md text-red-700">
                                     <Link href="/products">Products</Link>
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
@@ -84,7 +84,7 @@ export default function Navbar() {
 
                             {/* Services */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="font-semibold text-md">
+                                <NavigationMenuTrigger className="font-semibold text-md text-red-700">
                                     <Link href="/services">Services</Link>
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
@@ -107,7 +107,7 @@ export default function Navbar() {
                                 <NavigationMenuLink asChild>
                                     <Link
                                         href="/resources"
-                                        className="font-semibold text-lg px-2 py-2 rounded-md hover:bg-accent"
+                                        className=" text-red-700 font-semibold text-lg px-2 py-2  rounded-md hover:bg-accent"
                                     >
                                         Resources
                                     </Link>
@@ -119,7 +119,7 @@ export default function Navbar() {
                                 <NavigationMenuLink asChild>
                                     <Link
                                         href="/company"
-                                        className="font-semibold text-lg px-2 py-2 rounded-md hover:bg-accent"
+                                        className="font-semibold text-lg px-2 py-2 text-red-700 rounded-md hover:bg-accent"
                                     >
                                         Company
                                     </Link>

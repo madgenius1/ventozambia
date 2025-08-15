@@ -7,7 +7,7 @@ import { ShuffleGrid } from "../design/ShuffleGrid";
 export default function Hero() {
   return (
     <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-6 max-w-screen-xl mx-auto">
-      <div className="space-y-3">
+      <div className="space-y-6 flex flex-col gap-y-2">
         <h1 className="text-4xl lg:text-5xl md:text-4xl font-semibold text-neutral-950 dark:text-neutral-50">
           Vento Zambia Limited
         </h1>
@@ -16,16 +16,10 @@ export default function Hero() {
         </p>
         <div className="flex flex-row items-center gap-4">
           <Link
-            href="/quote"
-            className="bg-neutral-800 dark:bg-neutral-200 text-neutral-50 dark:text-neutral950 font-medium py-2 px-4 rounded transition-all hover:scale-95"
-          >
-            Get a Quote
-          </Link>
-          <Link
             href="/contact"
             className="bg-neutral-800 dark:bg-neutral-200 text-neutral-50 dark:text-neutral950 font-medium py-2 px-4 rounded transition-all hover:scale-95"
           >
-            Contact Us
+            Get a Quote
           </Link>
         </div>
       </div>
