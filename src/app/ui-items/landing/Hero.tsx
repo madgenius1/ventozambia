@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react"; // Use framer-motion directly
-import { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 
 /**
