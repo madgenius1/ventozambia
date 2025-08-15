@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 
 export default function Hero() {
@@ -35,11 +35,9 @@ export default function Hero() {
 }
 
 const shuffle = (array: (typeof squareData)[0][]) => {
-  let currentIndex = array.length,
-    randomIndex;
-
+  let currentIndex = array.length;
   while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
+    const randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
     [array[currentIndex], array[randomIndex]] = [
@@ -47,7 +45,6 @@ const shuffle = (array: (typeof squareData)[0][]) => {
       array[currentIndex],
     ];
   }
-
   return array;
 };
 
@@ -118,7 +115,6 @@ const squareData = [
   },
 ];
 
-
 const generateSquares = () => {
   return shuffle([...squareData]).map((sq) => (
     <motion.div
@@ -130,26 +126,26 @@ const generateSquares = () => {
         backgroundImage: `url(${sq.src})`,
         backgroundSize: "cover",
       }}
-    ></motion.div>
+    />
   ));
 };
 
 const ShuffleGrid = () => {
-  const timeoutRef = useRef<any>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [squares, setSquares] = useState<JSX.Element[]>([]);
 
-  useEffect(() => {
-    // Generate only on client to avoid hydration mismatch
-    setSquares(generateSquares());
-    shuffleSquares();
-
-    return () => clearTimeout(timeoutRef.current);
-  }, []);
-
-  const shuffleSquares = () => {
+  const shuffleSquares = useCallback(() => {
     setSquares(generateSquares());
     timeoutRef.current = setTimeout(shuffleSquares, 3000);
-  };
+  }, []);
+
+  useEffect(() => {
+    setSquares(generateSquares());
+    shuffleSquares();
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [shuffleSquares]);
 
   return (
     <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-2">
