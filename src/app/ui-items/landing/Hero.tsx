@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ShuffleGrid } from "../design/ShuffleGrid";
 
 
 export default function Hero() {
@@ -28,9 +29,7 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <div>
-        Item
-      </div>
+      <ShuffleGrid />
     </section>
   );
 }
