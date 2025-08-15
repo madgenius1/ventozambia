@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import React from "react";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
@@ -34,7 +35,7 @@ export default function Hero() {
   );
 }
 
-const shuffle = (array: (typeof squareData)[0][]) => {
+const shuffle = (array) => {
   let currentIndex = array.length,
     randomIndex;
 
@@ -135,20 +136,22 @@ const generateSquares = () => {
 };
 
 const ShuffleGrid = () => {
-  const timeoutRef = useRef<any>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [squares, setSquares] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
+    // Define shuffleSquares inside useEffect to resolve the dependency warning.
+    // This ensures that `shuffleSquares` is stable for the hook.
+    const shuffleSquares = () => {
+      setSquares(generateSquares());
+      timeoutRef.current = setTimeout(shuffleSquares, 3000);
+    };
+
     setSquares(generateSquares());
     shuffleSquares();
 
     return () => clearTimeout(timeoutRef.current);
   }, []);
-
-  const shuffleSquares = () => {
-    setSquares(generateSquares());
-    timeoutRef.current = setTimeout(shuffleSquares, 3000);
-  };
 
   return (
     <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-2">
