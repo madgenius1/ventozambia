@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "motion/react"; // Use framer-motion directly
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 /**
@@ -43,7 +43,7 @@ export default function Hero() {
 const squareData = [
   { id: 1, src: "https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" },
   { id: 2, src: "https://images.unsplash.com/photo-1510925758641-869d353cecc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" },
-  { id: 3, src: "https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" },
+  { id: 3, src: "https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MhxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" },
   { id: 4, src: "https://images.unsplash.com/photo-1580238053495-b9720401fd45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" },
   { id: 5, src: "https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80" },
   { id: 6, src: "https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" },
@@ -59,7 +59,11 @@ const squareData = [
   { id: 16, src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1820&q=80" },
 ];
 
-
+/**
+ * Fisher-Yates shuffle algorithm to randomize an array.
+ * @param array The array to shuffle.
+ * @returns The shuffled array.
+ */
 const shuffle = (array: (typeof squareData)[0][]) => {
   let currentIndex = array.length, randomIndex;
 
@@ -75,7 +79,9 @@ const shuffle = (array: (typeof squareData)[0][]) => {
   return array;
 };
 
-
+/**
+ * Creates the motion.div elements for the grid with image URLs.
+ */
 const generateSquares = () => {
   return shuffle([...squareData]).map((sq) => (
     <motion.div
@@ -91,26 +97,35 @@ const generateSquares = () => {
   ));
 };
 
-
+/**
+ * A grid component that shuffles images every 3 seconds using `framer-motion`
+ * for a smooth animation effect.
+ */
 const ShuffleGrid = () => {
+  // Fix for the 'any' type error. The timeout ID is a number or null.
   const timeoutRef = useRef<number | null>(null);
   const [squares, setSquares] = useState<JSX.Element[]>([]);
 
+  // Fix for the useEffect dependency warning.
+  // We wrap the function in useCallback to ensure its reference is stable.
   const shuffleSquares = useCallback(() => {
     setSquares(generateSquares());
     timeoutRef.current = window.setTimeout(shuffleSquares, 3000);
   }, []);
 
   useEffect(() => {
+    // Initial shuffle when the component mounts
     shuffleSquares();
 
+    // Clean up the timeout when the component unmounts
     return () => {
-
+      // The `!` is a non-null assertion because we know timeoutRef.current
+      // will hold a value by the time the cleanup runs.
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [shuffleSquares]);
+  }, [shuffleSquares]); // Now we can safely include shuffleSquares in the dependency array
 
   return (
     <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-2">
@@ -118,3 +133,6 @@ const ShuffleGrid = () => {
     </div>
   );
 };
+
+// Export the main component as default
+export default Hero;
