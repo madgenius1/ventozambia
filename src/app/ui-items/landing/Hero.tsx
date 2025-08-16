@@ -16,10 +16,10 @@ export default function Hero() {
         </p>
         <div className="flex flex-row items-center gap-4">
           <Link
-            href="/contact"
+            href="/products"
             className="bg-neutral-800 dark:bg-neutral-200 text-neutral-50 dark:text-neutral950 font-medium py-2 px-4 rounded transition-all hover:scale-95"
           >
-            Get a Quote
+            Browse Our Products
           </Link>
         </div>
       </div>

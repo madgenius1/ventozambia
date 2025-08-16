@@ -14,8 +14,8 @@ export default function Page() {
   return (
     <main>
       <Hero />
-      <Certifications />
       <Products />
+      <Certifications />
       <Statistics />
       <Services />
       <Partners />

@@ -45,7 +45,7 @@ export default function Navbar() {
     const toggleMobileMenu = () => setIsMobileMenuOpen(prev => !prev);
 
     return (
-        <nav className="bg-background/95 sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-lg">
+        <nav className="bg-background/95 sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between">
                 <div className="flex justify-start">
                     <Link href="/">
@@ -59,9 +59,9 @@ export default function Navbar() {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex justify-end space-x-4 px-4">
+                <div className="hidden md:flex justify-end items-center space-x-2 px-4">
                     <NavigationMenu>
-                        <NavigationMenuList className="space-x-4">
+                        <NavigationMenuList className="space-x-2">
                             {/* Products */}
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger className="font-semibold text-md text-red-700">
@@ -107,7 +107,7 @@ export default function Navbar() {
                                 <NavigationMenuLink asChild>
                                     <Link
                                         href="/resources"
-                                        className=" text-red-700 font-semibold text-lg px-2 py-2  rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                        className=" text-red-700 font-semibold text-lg p-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                                     >
                                         Resources
                                     </Link>
@@ -119,7 +119,7 @@ export default function Navbar() {
                                 <NavigationMenuLink asChild>
                                     <Link
                                         href="/company"
-                                        className=" text-red-700 font-semibold text-lg px-2 py-2  rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                        className=" text-red-700 font-semibold text-lg p-w rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                                     >
                                         Company
                                     </Link>
@@ -147,7 +147,7 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             <div
-                className={`absolute left-0 w-full transition-all duration-300 ease-in-out md:hidden bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-lg ${isMobileMenuOpen
+                className={`absolute left-0 w-full transition-all duration-300 ease-in-out md:hidden bg-neutral-300 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-lg ${isMobileMenuOpen
                     ? 'top-full opacity-100 visible'
                     : '-top-96 opacity-0 invisible'
                     }`}
