@@ -78,7 +78,7 @@ export const ShuffleGrid = () => {
     const squares = useShuffle(initialGridData, 3000);
 
     return (
-        <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+        <div className="grid grid-cols-3 grid-rows-3 lg:grid-cols-4 lg:grid-rows-4 md:grid-cols-4 md:grid-rows-4 h-[450px] gap-1">
             {squares.map((sq) => (
                 <motion.div
                     key={sq.id}

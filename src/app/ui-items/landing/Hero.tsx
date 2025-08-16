@@ -11,7 +11,7 @@ export default function Hero() {
         <h1 className="text-4xl lg:text-5xl md:text-4xl font-semibold text-neutral-950 dark:text-neutral-50">
           Vento Zambia Limited
         </h1>
-        <p className="text-sm lg:text-lg leading-relaxed text-slate-700 my-4 md:my-6">
+        <p className="text-sm lg:text-lg leading-relaxed text-slate-800 my-4 md:my-6">
           Vento Zambia Limited is a leading specialized supplier of hydraulic lifting equipment, pumps, hydraulic maintenance tools, and flange management for the heavy industry sectors.
         </p>
         <div className="flex flex-row items-center gap-4">
