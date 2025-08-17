@@ -118,10 +118,10 @@ export default function Navbar() {
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
                                     <Link
-                                        href="/company"
+                                        href="/about-us"
                                         className=" text-red-700 font-semibold text-lg p-w rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                                     >
-                                        Company
+                                        About Us
                                     </Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
@@ -147,7 +147,7 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             <div
-                className={`absolute left-0 w-full transition-all duration-300 ease-in-out md:hidden bg-neutral-300 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-lg ${isMobileMenuOpen
+                className={`absolute left-0 w-full transition-all duration-300 ease-in-out md:hidden bg-neutral-500 backdrop-blur supports-[backdrop-filter]:bg-background/80 shadow-lg ${isMobileMenuOpen
                     ? 'top-full opacity-100 visible'
                     : '-top-96 opacity-0 invisible'
                     }`}
@@ -182,11 +182,29 @@ export default function Navbar() {
                     </li>
                     <li className="w-full">
                         <Link
-                            href="/company"
+                            href="/about-us"
                             className="block px-4 py-2 font-semibold text-md hover:bg-accent rounded-md"
                             onClick={toggleMobileMenu}
                         >
-                            Company
+                            About Us
+                        </Link>
+                    </li>
+                    <li className="w-full">
+                        <Link
+                            href="/contact"
+                            className="block px-4 py-2 font-semibold text-md hover:bg-accent rounded-md"
+                            onClick={toggleMobileMenu}
+                        >
+                            Contact Us
+                        </Link>
+                    </li>
+                    <li className="w-full">
+                        <Link
+                            href="/terms"
+                            className="block px-4 py-2 font-semibold text-md hover:bg-accent rounded-md"
+                            onClick={toggleMobileMenu}
+                        >
+                            Terms & Conditions
                         </Link>
                     </li>
                 </ul>
