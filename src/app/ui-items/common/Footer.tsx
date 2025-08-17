@@ -45,7 +45,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-di
                     <div className=''>
                         <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">Company</p>
 
