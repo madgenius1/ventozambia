@@ -1,17 +1,18 @@
 export const products = [
   {
-    id: "product-one",
-    name: "Product One",
-    description: "Browse details of Product One.",
+    id: "hiforce",
+    name: "Hiforce Tools",
   },
   {
-    id: "product-two",
-    name: "Product Two",
-    description: "Browse details of Product Two.",
+    id: "hififilter",
+    name: "Hifi Filter",
   },
   {
-    id: "product-three",
-    name: "Product Three",
-    description: "Browse details of Product Three.",
+    id: "egamaster",
+    name: "Ega Master",
+  },
+  {
+    id: "alkitronic",
+    name: "Alkitronic",
   },
 ];

@@ -14,7 +14,6 @@ const solutions = [
             "Hydraulic Pumps",
             "Hydraulic Jacks and Toughlifts",
             "Torque Tools",
-            "Accessories"
         ],
     },
     {
@@ -26,7 +25,6 @@ const solutions = [
             "Peripheral Filters",
             "Industrial Process Filters",
             "Tools and Gaskets",
-            "Accessories"
         ],
     },
     {
@@ -38,7 +36,6 @@ const solutions = [
             "Pipe Tools",
             "Safety Tools",
             "Tools Control Systems",
-            "Accessories"
         ],
     },
     {
@@ -50,7 +47,6 @@ const solutions = [
             "Pneumatic Torque Tools",
             "Manual Torque Tools",
             "Accessories",
-            "Calibration Services"
         ],
     },
 ];
@@ -70,13 +66,12 @@ export default function Solutions() {
                     <hr className="my-10 border-gray-400" />
 
                     {/* --- Dynamic Grid of Solution Cards --- */}
-                    <div className="py-2 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-8 md:gap-6 gap-4">
+                    <div className="py-2 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-6 gap-4">
                         {solutions.map((solution) => (
                             <div
                                 key={solution.id}
                                 className="flex flex-col p-6 rounded-xl bg-white"
                             >
-                                {/* The Image and its container */}
                                 <div className="flex justify-center items-center mb-4">
                                     <Image
                                         src={solution.imageLink}
