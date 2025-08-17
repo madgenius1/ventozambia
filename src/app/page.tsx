@@ -1,5 +1,5 @@
 import Hero from "./ui-items/landing/Hero";
-import Products from "./ui-items/landing/Products";
+import Solutions from "./ui-items/landing/Solutions";
 import Services from "./ui-items/landing/Services";
 import Statistics from "./ui-items/landing/Statistics";
 import CallToAction from "./ui-items/landing/CallToAction";
@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <main>
       <Hero />
-      <Products />
+      <Solutions />
       <Certifications />
       <Statistics />
       <Services />
