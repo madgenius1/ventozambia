@@ -125,6 +125,16 @@ export default function Navbar() {
                                     </Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link
+                                        href="/contact"
+                                        className=" text-red-700 font-semibold text-lg p-w rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                    >
+                                        Contact Us
+                                    </Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
                 </div>
