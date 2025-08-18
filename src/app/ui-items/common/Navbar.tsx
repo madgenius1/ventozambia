@@ -68,13 +68,14 @@ export default function Navbar() {
                                     <Link href="/products">Products</Link>
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <ul className="grid w-[300px] gap-2 list-none p-4">
+                                    <ul className="grid w-[300px] gap-4 list-none p-4">
                                         {products.map(product => (
                                             <ListItem
                                                 key={product.id}
                                                 href={`/products/${product.id}`}
                                                 title={product.name}
                                             >
+                                                {product.description}
                                             </ListItem>
                                         ))}
                                     </ul>
