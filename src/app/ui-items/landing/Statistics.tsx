@@ -17,7 +17,7 @@ export default function Statistics() {
                     <h3 className="text-start text-neutral-800 dark:text-neutral-200 font-bold lg:text-4xl text-2xl">
                         Track Record
                     </h3>
-                    <p className="text-base pt-4 text-neutral-700 font-medium leading-relaxed max-w-3xl">
+                    <p className="lg:text-xl text-sm pt-4 text-neutral-700 font-medium leading-relaxed max-w-3xl">
                         Our numbers speak for themsleves. <br />
                         We have track record for deliverying quality products and services.
                     </p>

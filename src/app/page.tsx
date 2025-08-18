@@ -4,8 +4,7 @@ import Services from "./ui-items/landing/Services";
 import Statistics from "./ui-items/landing/Statistics";
 import CallToAction from "./ui-items/landing/CallToAction";
 import Partners from "./ui-items/landing/Partners";
-import Certifications from "./ui-items/landing/Certifications";
-
+import Brands from "./ui-items/landing/Brands";
 
 
 
@@ -15,9 +14,9 @@ export default function Page() {
     <main>
       <Hero />
       <Solutions />
-      <Certifications />
-      <Statistics />
+      <Brands />
       <Services />
+      <Statistics />
       <Partners />
       <CallToAction />
 

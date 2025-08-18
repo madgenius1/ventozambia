@@ -59,7 +59,7 @@ export default function Solutions() {
                     <h3 className="text-start text-neutral-800 dark:text-neutral-200 font-bold lg:text-4xl text-2xl">
                         Our Solutions
                     </h3>
-                    <p className="text-base pt-4 text-neutral-700 font-medium leading-relaxed max-w-3xl">
+                    <p className="lg:text-xl text-sm pt-4 text-neutral-700 font-medium leading-relaxed max-w-3xl">
                         At Vento Zambia, we offer a comprehensive range of industrial solutions tailored to meet the specific needs of various industries.
                         From local supply to international sourcing, we&apos;ve got you covered with our extensive product range and expert guidance.
                     </p>

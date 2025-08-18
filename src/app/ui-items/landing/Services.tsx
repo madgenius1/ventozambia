@@ -10,7 +10,7 @@ export default function Services() {
                     <h3 className="text-start text-neutral-800 dark:text-neutral-200 font-bold lg:text-4xl text-2xl">
                         Core Services
                     </h3>
-                    <p className="text-base pt-4 text-neutral-700 font-medium leading-relaxed max-w-3xl">
+                    <p className="lg:text-xl text-sm pt-4 text-neutral-700 font-medium leading-relaxed max-w-3xl">
                         We don&apos;t just supply products—we keep industries and businesses moving. <br />
                         With decades of expertise, a vast product range, and a commitment to quality, we provide reliable services that keep your machinery running smoothly and efficiently.
                     </p>
