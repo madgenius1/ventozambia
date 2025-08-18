@@ -22,13 +22,15 @@ export default function Partners() {
                     <hr className="my-10 border-gray-400" />
                     <div className="flex items-center justify-between lg:flex-row flex-col lg:gap-8 gap-4 p-4">
                         {sources.map((source, index) => (
-                            <Image
-                                src={source.src}
-                                alt={source.alt}
-                                width={200}
-                                height={200}
-                                className="object-contain shadow-md"
-                            />
+                            <div key={index} className="">
+                                <Image
+                                    src={source.src}
+                                    alt={source.alt}
+                                    width={200}
+                                    height={200}
+                                    className="object-contain shadow-md"
+                                />
+                            </div>
                         ))}
                     </div>
                 </div>
