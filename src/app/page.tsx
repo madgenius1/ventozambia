@@ -25,7 +25,6 @@ export default function Page() {
       <Partners />
       <Affiliations />
       <ContactSection />
-
     </main>
   );
 }

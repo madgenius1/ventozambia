@@ -3,6 +3,9 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Navbar from "./ui-items/common/Navbar";
 import Footer from "./ui-items/common/Footer";
+import Link from 'next/link'
+import { FaWhatsapp } from "react-icons/fa6";
+
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -25,6 +28,15 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <div className="fixed bottom-10 right-10 z-50">
+          <Link
+            href="https://wa.me/260968539232"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaWhatsapp size={40} color="#099D15" />
+          </Link>
+        </div>
         <Footer />
       </body>
     </html>

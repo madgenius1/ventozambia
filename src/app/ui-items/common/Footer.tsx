@@ -36,7 +36,7 @@ export default function Footer() {
                             <Link href="/products" className="hover:text-blue-600 transition-colors font-medium">Products</Link>
                             <Link href="/services" className="hover:text-blue-600 transition-colors font-medium">Services</Link>
                             <Link href="/about-us" className="hover:text-blue-600 transition-colors font-medium">About Us</Link>
-                            <Link href="/blog" className="hover:text-blue-600 transition-colors font-medium">Blog</Link>
+                            <Link href="/resources" className="hover:text-blue-600 transition-colors font-medium">Resources</Link>
                         </nav>
                     </div>
 
