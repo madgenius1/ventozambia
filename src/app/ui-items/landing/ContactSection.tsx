@@ -1,7 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const ContactInfoBlock = ({ title, children }) => (
+interface ContactInfoBlockProps {
+    title: string;
+    children: React.ReactNode;
+}
+
+const ContactInfoBlock = ({ title, children }: ContactInfoBlockProps) => (
     <div className="flex flex-col gap-2 pb-6 border-b border-neutral-600">
         <h3 className="text-lg font-semibold text-blue-700">
             {title}
