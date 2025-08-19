@@ -2,10 +2,12 @@ import Hero from "./ui-items/landing/Hero";
 import Solutions from "./ui-items/landing/Solutions";
 import Services from "./ui-items/landing/Services";
 import Statistics from "./ui-items/landing/Statistics";
-import CallToAction from "./ui-items/landing/CallToAction";
+import ContactSection from "./ui-items/landing/ContactSection";
 import Partners from "./ui-items/landing/Partners";
 import Brands from "./ui-items/landing/Brands";
 import Affiliations from "./ui-items/landing/Affiliations";
+import CallToAction from "./ui-items/landing/CallToAction";
+
 
 
 
@@ -17,11 +19,13 @@ export default function Page() {
       <Hero />
       <Solutions />
       <Brands />
+      <CallToAction />
       <Services />
       <Statistics />
       <Partners />
       <Affiliations />
-      <CallToAction />
+      <ContactSection />
+
     </main>
   );
 }

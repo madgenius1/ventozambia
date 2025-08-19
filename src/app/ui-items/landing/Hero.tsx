@@ -18,7 +18,7 @@ export default function Hero() {
           <div className="flex flex-row items-center pt-4 gap-4">
             <Link
               href="/products"
-              className="bg-neutral-800 dark:bg-neutral-200 text-neutral-50 dark:text-neutral950 lg:text-xl text-md font-medium lg:px-8 lg:py-6 py-2 px-4 lg:rounded-xl rounded transition-all hover:scale-95"
+              className="bg-neutral-800 dark:bg-neutral-200 text-neutral-50 lg:text-xl text-md font-medium lg:px-8 lg:py-6 py-2 px-4 lg:rounded-xl rounded transition-all hover:scale-95"
             >
               Browse Our Products
             </Link>
