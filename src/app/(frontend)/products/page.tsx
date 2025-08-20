@@ -1,14 +1,14 @@
 
-
+import Header from "@/app/ui-items/design/Header";
 
 export default function Page() {
   return (
-    <main className="bg-neutral-50 dark:bg-neutral-900 min-h-screen">
-      <div className="lg:p-8 md:p-6 p-4 flex items-center text-center">
-        <h3 className="text-neutral-90 dark:text-neutral-100 font-medium lg:text-xl md:text-md text-sm">
-            Products List
-        </h3>
-      </div>
+    <main className="bg-[url('/background.png')] bg-center bg-no-repeat bg-contain min-h-screen">
+      <Header
+        title="Products"
+        statement="Vento Zambia offers a comprehensive product portfolio that meets the demands of industries and sectors. We supply Hiforce Tools, Hifi Filters, Alkitronic Tools, Sygma Instruments, Metabo Power tools, and many more."
+      />
+
     </main>
   );
 }

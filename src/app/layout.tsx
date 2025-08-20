@@ -28,13 +28,13 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <div className="fixed bottom-10 right-10 z-50">
+        <div className="p-2 rounded-full bg-[#099D15] fixed bottom-8 right-5 z-50">
           <Link
             href="https://wa.me/260968539232"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaWhatsapp size={40} color="#099D15" />
+            <FaWhatsapp size={40} color="#FFFFFF" />
           </Link>
         </div>
         <Footer />
