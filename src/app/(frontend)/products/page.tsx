@@ -75,7 +75,7 @@ export default function Page() {
           </div>
         </div>
         {/* CTA */}
-        <div className="flex justify-center items-center my-4">
+        <div className="flex justify-center items-center my-6">
           <Link
             href="/products/hiforce"
             className="bg-neutral-800 dark:bg-neutral-200 text-neutral-50 lg:text-xl text-md font-medium lg:px-8 lg:py-6 py-2 px-4 lg:rounded-xl rounded transition-all hover:scale-95"
