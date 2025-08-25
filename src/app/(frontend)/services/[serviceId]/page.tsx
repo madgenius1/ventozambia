@@ -1,14 +1,20 @@
 
-
+import ServiceHeader from "@/app/ui-items/design/ServiceHeader";
 
 export default function Page() {
   return (
-    <main className="bg-neutral-50 dark:bg-neutral-900 min-h-screen">
-      <div className="lg:p-8 md:p-6 p-4 flex items-center text-center">
-        <h3 className="text-neutral-90 dark:text-neutral-100 font-medium lg:text-xl md:text-md text-sm">
-            Service Id
-        </h3>
+    <main className="min-h-screen">
+      <ServiceHeader
+        title="Tool Repair"
+        statement="Explore our Tool Repair. Download our products and services catalogue."
+        url="/tool-repair.jpg"
+      />
+      <div className="bg-gray-100">
+        <div className="max-w-screen-xl mx-auto lg:p-8 md:p-6 p-4 ">
+          <h3 className="text-md text-gray-950"></h3>
+        </div>
       </div>
+
     </main>
   );
 }
