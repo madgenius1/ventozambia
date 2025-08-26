@@ -5,8 +5,8 @@ export default function Page() {
   return (
     <main className="min-h-screen">
       <ServiceHeader
-        title="Tool Repair"
-        statement="Explore our Tool Repair. Download our products and services catalogue."
+        title="Hiforce Hydraulic Tools"
+        statement="Explore our Hiforce Tools Catalogue. Download our products catalogue and make enquiries."
         url="/tool-repair.jpg"
       />
       <div className="bg-gray-100">
