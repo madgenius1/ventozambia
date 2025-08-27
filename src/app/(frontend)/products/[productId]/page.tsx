@@ -1,93 +1,113 @@
 
 
+import { notFound } from "next/navigation";
+import { productList } from "@/lib/products";
+import { productMetadata } from "@/lib/metadata";
 import Image from "next/image";
+import Link from "next/link";
 
-const productArray = [
-  {
-    imageUrl: "/hydraulicpump.jpg",
-    itemName: "Hydraulic Jacklift",
-    itemDescription: "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request."
-  },
-  {
-    imageUrl: "/hydraulicpump.jpg",
-    itemName: "Hydraulic Pumps",
-    itemDescription: "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request."
-  },
-  {
-    imageUrl: "/hydraulicpump.jpg",
-    itemName: "Toughlift Jacklift",
-    itemDescription: "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request."
-  },
-  {
-    imageUrl: "/hydraulicpump.jpg",
-    itemName: "Torque Lifts",
-    itemDescription: "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request."
-  },
-  {
-    imageUrl: "/hydraulicpump.jpg",
-    itemName: "Hydrotest Pumps",
-    itemDescription: "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request."
-  },
-  {
-    imageUrl: "/hydraulicpump.jpg",
-    itemName: "Hydraulic Puller Kits",
-    itemDescription: "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request."
-  },
-]
+interface ProductPageProps {
+  params: Promise<{
+    productId: string;
+  }>;
+}
 
-export default function Page() {
+export async function generateMetadata({ params }: ProductPageProps) {
+  const { productId } = await params;
+  const metadata =
+    productMetadata[productId as keyof typeof productMetadata];
+
+  if (!metadata) {
+    return {
+      title: "Product Not Found | Vento Zambia",
+      description: "This product does not exist in our catalogue.",
+    };
+  }
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    keywords: metadata.keywords,
+  };
+}
+
+export default async function Page({ params }: ProductPageProps) {
+  const { productId } = await params;
+  const product = productList.find((p) => p.id === productId);
+
+  if (!product) return notFound();
+
   return (
     <main className="min-h-screen">
       {/* Header Component */}
-      <div className="relative lg:h-64 h-56 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-300"
-          style={{ backgroundImage: `url(/tool-repair.jpg)` }}
-        >      {/* the background div should be this way: style={{ backgroundImage: `url(${url})` }} */}
-        </div>
-        <div className="absolute inset-0 bg-black opacity-60"></div>
-        <div className="relative z-10 flex h-full items-center justify-center text-center px-4">
-          <div className="max-w-3xl space-y-4">
-            {/* {title} goes into the h1 element */}
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-white">
-              Hiforce Hydraulic Tools
-            </h1>
-            {/* {statement} goes into the p element */}
-            <p className="text-white text-lg sm:text-xl font-medium leading-relaxed">
-              Explore our Hiforce Tools Catalogue. Download our products catalogue and make enquiries.
-            </p>
-          </div>
-        </div>
-      </div>
-      {/* Body Component */}
-      <div className="lg:p-8 md:p-6 p-4">
-        <div className="flex items-center justify-center py-4">
-          {/* Product Name's Catalogue */}
-          <h2 className="text-lg lg:text-2xl font-semibold leading-relaxed text-center">
-            Vento Zambia&apos;s Hiforce Tools Catalogue
-          </h2>
-        </div>
-        {/* Specific Product Array that includes the image, the item name, and the description */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 lg:gap-10 md:gap-8 sm:gap-6 gap-4">
-          {productArray.map((product, index) =>
-            <div key={index} className="flex flex-col space-y-2 gap-y-2 py-2">
-              <Image
-                src={product.imageUrl}
-                alt={product.itemName}
-                width={360}
-                height={240}
-                className="rounded-lg object-center"
-              />
-              <h3 className="text-md font-medium text-gray-950 lg:text-lg">
-                {product.itemName}
-              </h3>
-              <p className="leading-relaxed text-md text-gray-800">
-                {product.itemDescription}
+      {product.headerContent.map((head, i) => (
+        <div key={i} className="relative lg:h-72 h-auto overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-300"
+            style={{ backgroundImage: `url(${head.url})` }}
+          ></div>
+          <div className="absolute inset-0 bg-black opacity-60"></div>
+          <div className="relative z-10 flex h-full items-center justify-start text-start px-4">
+            <div className="max-w-3xl space-y-4 p-6">
+              <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-extrabold text-white">
+                {head.title}
+              </h1>
+              <p className="text-white md:text-md sm:text-lg font-medium leading-relaxed">
+                {head.statement}
               </p>
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      ))}
+
+      {/* Body Component */}
+      {product.bodyContent.map((body, j) => (
+        <div key={j}>
+          <div className="lg:p-8 md:p-6 p-4 max-w-screen-xl mx-auto mb-6">
+            <div className="flex items-center justify-center py-4 my-6">
+              <h2 className="text-lg lg:text-2xl font-bold leading-relaxed text-center">
+                Vento Zambia&apos;s {body.title}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 lg:gap-10 md:gap-8 sm:gap-6 gap-4">
+              {body.productArray.map((item, k) => (
+                <div key={k} className="flex flex-col space-y-2 gap-4 p-2">
+                  <Image
+                    src={item.imageUrl}
+                    alt={item.itemName}
+                    width={360}
+                    height={240}
+                    className="rounded-lg object-center"
+                  />
+                  <h3 className="text-md font-semibold text-gray-950 lg:text-xl">
+                    {item.itemName}
+                  </h3>
+                  <p className="leading-relaxed text-md text-gray-800">
+                    {item.itemDescription}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Component */}
+          <div className="bg-neutral-950 bg-no-repeat">
+            <div className="lg:p-8 md:p-6 p-4 space-y-4">
+              <div className="max-w-screen-xl mx-auto p-4 flex flex-col items-center justify-center my-6 gap-y-4">
+                <h3 className="text-center text-neutral-100 font-bold lg:text-4xl text-2xl pb-4">
+                  Contact us for a Quote on {body.title}.
+                </h3>
+                <Link
+                  href="/quotation"
+                  className="bg-neutral-200 text-neutral-950 text-md font-medium py-2 px-4 rounded transition-all hover:scale-95"
+                >
+                  Get a Quote
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </main>
   );
 }

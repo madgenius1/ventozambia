@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function CallToAction() {
     return (
-        <main className=" bg-neutral-100 bg-cover bg-center bg-no-repeat">
+        <main className=" bg-neutral-100 bg-no-repeat">
             <div className="lg:p-8 md:p-6 p-4 ">
                 <div className="max-w-screen-xl mx-auto p-4 flex flex-col items-center justify-center my-6">
                     <h3 className="text-center text-neutral-800 dark:text-neutral-200 font-bold lg:text-4xl text-2xl">
