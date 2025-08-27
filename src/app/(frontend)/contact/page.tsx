@@ -1,8 +1,9 @@
 'use client'
 
+import Link from 'next/link';
+
 import { useState } from 'react';
 import { Smartphone, MapPin, Mail, Loader2 } from 'lucide-react';
-import Link from 'next/link';
 import {
   Popover,
   PopoverTrigger,
@@ -26,12 +27,14 @@ export default function App() {
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  // Explicitly type the event as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  // Explicitly type the event as React.FormEvent<HTMLFormElement>
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     // Simulate API call
@@ -44,7 +47,7 @@ export default function App() {
 
   return (
     <div className="bg-neutral-100 min-h-screen p-4 sm:p-6 md:p-8 flex items-center justify-center font-sans">
-      <div className="w-full max-w-6xl bg-neutral-50 shadow-2xl rounded-3xl p-6 sm:p-10 md:p-12 lg:p-16">
+      <div className="w-full max-w-screen-xl mx-auto bg-neutral-50 shadow-2xl rounded-3xl p-6 sm:p-10 md:p-12 lg:p-16">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <div className="flex flex-col gap-6 lg:w-1/2">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 leading-tight">
@@ -59,11 +62,28 @@ export default function App() {
                   <div className="flex-shrink-0 p-3 bg-neutral-200 rounded-full shadow-inner">
                     {contact.icon}
                   </div>
+                  {/* Changed to a standard <a> tag since next/link is not available in the sandbox */}
                   <Link href={contact.href} className="text-neutral-700 text-sm sm:text-base hover:text-neutral-900 transition-colors duration-300 font-medium">
                     {contact.data}
                   </Link>
                 </div>
               ))}
+            </div>
+            {/* Map Section */}
+            <div className="mt-8">
+              <h3 className="text-xl font-bold text-neutral-900 mb-4">Find Us on the Map</h3>
+              <div className="w-full rounded-2xl overflow-hidden shadow-lg border border-neutral-200">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.621980838186!2d28.2513476148386!3d-12.836009990928225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1967232231268487%3A0x6d90d56b0d912959!2s1539%20Kafulafuta%20Rd%2C%20Kitwe%2C%20Zambia!5e0!3m2!1sen!2sus!4v1628173456789!5m2!1sen!2sus"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  title="Google Maps location of Vento Zambia"
+                  className="rounded-2xl"
+                ></iframe>
+              </div>
             </div>
           </div>
           <div className="lg:w-1/2 mt-8 lg:mt-0">
