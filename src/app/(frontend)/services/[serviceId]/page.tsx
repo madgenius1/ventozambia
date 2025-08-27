@@ -67,13 +67,13 @@ export default async function Page({ params }: ServicePageProps) {
             <div className="max-w-screen-xl mx-auto lg:p-8 md:p-6 p-4 ">
               <div>
                 {body.serviceArray.map((item, k) =>
-                  <div key={k} className="flex lg:flex-row md:flex-row lg:odd:flex-row-reverse lg:gap-8 md:gap-6 sm:gap-6 gap-4 flex-col justify-between p-4">
+                  <div key={k} className="flex lg:flex-row md:flex-row lg:odd:flex-row-reverse space-y-6 my-6 lg:gap-8 md:gap-6 sm:gap-6 gap-4 flex-col justify-between p-4 border-b border-neutral-600">
                     <div className="flex items-center lg:justify-center justify-start">
                       <Image
                         src={item.imageUrl}
                         alt={item.itemName}
-                        width={360}
-                        height={240}
+                        width={420}
+                        height={360}
                         className="rounded-lg object-center"
                       />
                     </div>
