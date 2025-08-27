@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import { serviceMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { servicesItems } from "@/lib/services";
-import { div } from "motion/react-client";
 
 interface ServicePageProps {
   params: Promise<{
@@ -68,7 +67,7 @@ export default async function Page({ params }: ServicePageProps) {
             <div className="max-w-screen-xl mx-auto lg:p-8 md:p-6 p-4 ">
               <div>
                 {body.serviceArray.map((item, k) =>
-                  <div className="flex lg:flex-row md:flex-row lg:odd:flex-row-reverse lg:gap-8 md:gap-6 sm:gap-6 gap-4 flex-col justify-between p-4">
+                  <div key={k} className="flex lg:flex-row md:flex-row lg:odd:flex-row-reverse lg:gap-8 md:gap-6 sm:gap-6 gap-4 flex-col justify-between p-4">
                     <div className="flex items-center lg:justify-center justify-start">
                       <Image
                         src={item.imageUrl}
