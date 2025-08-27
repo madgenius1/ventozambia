@@ -3,6 +3,13 @@ import Header from "@/app/ui-items/design/Header";
 import { servicesComponent } from "@/lib/services"
 import { MoveRight } from "lucide-react";
 import Link from "next/link"
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Services | Vento Zambia",
+  description: "Industrial Equipment Supplier in Zambia",
+  keywords: "Vento Zambia Limited, Hiforce tools Zambia, Hifi filters Zambia, Alkatronic tools Zambia, Interbolt tools Zambia "
+};
 
 export default function Page() {
   return (

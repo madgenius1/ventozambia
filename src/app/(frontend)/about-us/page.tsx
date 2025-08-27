@@ -1,4 +1,11 @@
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Vento Zambia",
+  description: "Industrial Equipment Supplier in Zambia",
+  keywords: "Vento Zambia Limited, Hiforce tools Zambia, Hifi filters Zambia, Alkatronic tools Zambia, Interbolt tools Zambia "
+};
 
 
 export default function Page() {
