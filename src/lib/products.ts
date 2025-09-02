@@ -166,6 +166,36 @@ export const productList = [
             itemDescription:
               "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request.",
           },
+          {
+            imageUrl: "/hydraulicpump.jpg",
+            itemName: "Toughlift Jacklift",
+            itemDescription:
+              "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request.",
+          },
+          {
+            imageUrl: "/hydraulicpump.jpg",
+            itemName: "Toughlift Jacklift",
+            itemDescription:
+              "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request.",
+          },
+          {
+            imageUrl: "/hydraulicpump.jpg",
+            itemName: "Toughlift Jacklift",
+            itemDescription:
+              "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request.",
+          },
+          {
+            imageUrl: "/hydraulicpump.jpg",
+            itemName: "Toughlift Jacklift",
+            itemDescription:
+              "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request.",
+          },
+          {
+            imageUrl: "/hydraulicpump.jpg",
+            itemName: "Toughlift Jacklift",
+            itemDescription:
+              "The extensive range of Hi-Force hydraulic cylinders includes a wide choice of options related to capacity, stroke length, single or double acting operation, steel or aluminium construction, hollow piston centre hole and mechanical failsafe lock ring designs. All models are 700 bar maximum working pressure and capacities range from 4.5 tonnes to 1012 tonnes, with special design cylinders also available on request.",
+          },
         ],
       },
     ],

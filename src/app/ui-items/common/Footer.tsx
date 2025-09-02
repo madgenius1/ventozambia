@@ -16,7 +16,7 @@ export default function Footer() {
                     {/* Logo & Description */}
                     <div className="flex flex-col md:items-start text-left">
                         <Image
-                            src="/simplelogo.svg"
+                            src="/ventologo.png"
                             alt="Vento Zambia Logo"
                             width={140}
                             height={40}

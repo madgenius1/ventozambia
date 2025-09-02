@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Resources | Vento Zambia",
-  description: "Industrial Equipment Supplier in Zambia",
+  description: "Product resources for hiforce, hifi filters, and other Vento Zambia Products",
   keywords: "Vento Zambia Limited, Hiforce tools Zambia, Hifi filters Zambia, Alkatronic tools Zambia, Interbolt tools Zambia "
 };
 

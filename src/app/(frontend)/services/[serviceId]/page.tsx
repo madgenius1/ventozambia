@@ -47,7 +47,7 @@ export default async function Page({ params }: ServicePageProps) {
             style={{ backgroundImage: `url(${head.url})` }}
           ></div>
           <div className="absolute inset-0 bg-black opacity-60"></div>
-          <div className="relative z-10 flex h-full items-center justify-start text-start px-4">
+          <div className="relative z-10 flex h-full items-center justify-start text-start px-4 mx-auto max-w-screen-xl">
             <div className="max-w-3xl space-y-4 p-6">
               <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-extrabold text-white">
                 {head.title}

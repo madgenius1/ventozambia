@@ -16,6 +16,7 @@ import {
 
 import { products } from '@/lib/products';
 import { services } from '@/lib/services';
+import { sectors } from '@/lib/sectors';
 
 interface ListItemProps {
     href: string;
@@ -50,21 +51,32 @@ export default function Navbar() {
                 <div className="flex justify-start">
                     <Link href="/">
                         <Image
-                            src="/simplelogo.svg"
+                            src="/ventologo.png"
                             alt="logo"
-                            width={160}
-                            height={80}
+                            width={100}
+                            height={60}
                         />
                     </Link>
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex justify-end items-center space-x-2 px-4">
+                <div className="hidden md:flex justify-end items-center px-4">
                     <NavigationMenu>
-                        <NavigationMenuList className="space-x-2">
+                        <NavigationMenuList className="space-x-4">
+                            {/* Home */}
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link
+                                        href="/"
+                                        className=" text-red-700 font-semibold text-lg p-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                    >
+                                        Home
+                                    </Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
                             {/* Products */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="font-semibold text-md text-red-700">
+                                <NavigationMenuTrigger className="font-semibold text-sm text-red-700">
                                     <Link href="/products">Products</Link>
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
@@ -84,7 +96,7 @@ export default function Navbar() {
 
                             {/* Services */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="font-semibold text-md text-red-700">
+                                <NavigationMenuTrigger className="font-semibold text-sm text-red-700">
                                     <Link href="/services">Services</Link>
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
@@ -101,8 +113,27 @@ export default function Navbar() {
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
+                            {/* Products */}
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger className="font-semibold text-sm text-red-700">
+                                    <Link href="/sectors">Sectors</Link>
+                                </NavigationMenuTrigger>
+                                <NavigationMenuContent>
+                                    <ul className="grid w-[300px] gap-4 list-none p-4">
+                                        {sectors.map(sector => (
+                                            <ListItem
+                                                key={sector.id}
+                                                href={`/sectors/${sector.id}`}
+                                                title={sector.name}
+                                            >
+                                                {sector.description}
+                                            </ListItem>
+                                        ))}
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
 
-                            {/* Resources */}
+                            {/* Resources
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
                                     <Link
@@ -113,6 +144,7 @@ export default function Navbar() {
                                     </Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
+                            */}
 
                             {/* Company */}
                             <NavigationMenuItem>
@@ -179,6 +211,15 @@ export default function Navbar() {
                             onClick={toggleMobileMenu}
                         >
                             Services
+                        </Link>
+                    </li>
+                    <li className="w-full">
+                        <Link
+                            href="/sectors"
+                            className="block px-4 py-2 font-semibold text-md hover:bg-accent rounded-md"
+                            onClick={toggleMobileMenu}
+                        >
+                            Sectors
                         </Link>
                     </li>
                     <li className="w-full">

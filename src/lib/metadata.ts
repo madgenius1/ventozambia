@@ -64,3 +64,28 @@ export const serviceMetadata = {
       "installation services Kitwe Zambia, industrial equipment training Zambia, hydraulic tool installation Zambia, torque tools training Zambia, filtration systems training Zambia, operator training Zambia",
   },
 } as const;
+
+//this goes to sectors/[sectorId]/page.tsx
+export const sectorMetadata = {
+  mining: {
+    title: "Mining Solutions | Vento Zambia | Equipment & Services",
+    description:
+      "Comprehensive equipment and service solutions for the mining sector in Kitwe, Zambia. We provide industrial tools, pumps, and maintenance services to optimize your mining operations.",
+    keywords:
+      "mining solutions Zambia, mining equipment Kitwe, industrial tools for mining, mining maintenance services, hydraulic tools mining, Vento Zambia mining",
+  },
+  manufacturing: {
+    title: "Manufacturing Equipment | Vento Zambia | Industrial Supplies",
+    description:
+      "We supply a wide range of industrial equipment and components for the manufacturing industry in Kitwe, Zambia. Our products ensure efficiency and reliability in production.",
+    keywords:
+      "manufacturing equipment Zambia, industrial supplies Kitwe, Vento Zambia manufacturing, machinery components, production line maintenance, manufacturing solutions",
+  },
+  foodprocessing: {
+    title: "Food Processing Supplies | Vento Zambia | Hygienic & Safe",
+    description:
+      "Supplying specialized hygienic equipment and consumables for the food processing industry in Kitwe, Zambia. Our solutions prioritize safety, quality, and operational efficiency.",
+    keywords:
+      "food processing supplies Zambia, hygienic equipment Kitwe, Vento Zambia food processing, food safety solutions, processing machinery, food industry consumables",
+  },
+} as const;
