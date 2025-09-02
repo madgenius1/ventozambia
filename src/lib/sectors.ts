@@ -17,3 +17,39 @@ export const sectors = [
   },
 ];
 
+//this goes to /sectors/[sectorId]/page.tsx
+export const sectorList = [
+  {
+    id: "mining",
+    headerContent: [
+      {
+        url: "/mining.png",
+        title: "Mining",
+        statement:
+        "Products of the mining sector"
+      },
+    ],
+  },
+   {
+    id: "manufacturing",
+    headerContent: [
+      {
+        url: "/manufacturing.png",
+        title: "Manufacturing",
+        statement:
+        "Products of the manufacturing sector"
+      },
+    ],
+  },
+   {
+    id: "food-processing",
+    headerContent: [
+      {
+        url: "/processing.png",
+        title: "Food Processing",
+        statement:
+        "Products of the food processing sector"
+      },
+    ],
+  },
+];

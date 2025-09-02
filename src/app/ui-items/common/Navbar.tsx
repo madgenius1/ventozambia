@@ -116,7 +116,7 @@ export default function Navbar() {
                             {/* Products */}
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger className="font-semibold text-sm text-red-700">
-                                    <Link href="/sectors">Sectors</Link>
+                                    Sectors
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <ul className="grid w-[300px] gap-4 list-none p-4">
