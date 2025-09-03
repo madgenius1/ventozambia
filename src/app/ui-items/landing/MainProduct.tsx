@@ -46,7 +46,7 @@ export default function MainProduct() {
                         Hi-Force Hydraulic Tools
                     </h3>
                     <p className="lg:text-xl text-sm pt-4 text-neutral-700 font-medium leading-relaxed max-w-3xl">
-                        We focus on the supply and maintenance of <span className="font-semibold">Hi-Force Hydraulic Products</span> in Zambia.<br />
+                        We primarily supply and maintain <span className="font-semibold">Hi-Force Hydraulic Products</span> in Zambia.<br />
                     </p>
                     <hr className="my-10 border-gray-400" />
                     {/* <div className="my-10 space-y-4 flex flex-col items-center">

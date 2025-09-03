@@ -1,4 +1,4 @@
-//This goes to the Navbar.
+// Used in Navbar
 export const sectors = [
   {
     id: "mining",
@@ -11,13 +11,13 @@ export const sectors = [
     description: "Explore the manufacturing tools.",
   },
   {
-    id: "food-processing",
-    name: "Food processing",
+    id: "foodprocessing",
+    name: "Food Processing",
     description: "Explore the food-processing tools.",
   },
 ];
 
-//this goes to /sectors/[sectorId]/page.tsx
+// Used in /sectors/[sectorId]/page.tsx
 export const sectorList = [
   {
     id: "mining",
@@ -25,30 +25,27 @@ export const sectorList = [
       {
         url: "/mining.png",
         title: "Mining",
-        statement:
-        "Products of the mining sector"
+        statement: "Products of the mining sector",
       },
     ],
   },
-   {
+  {
     id: "manufacturing",
     headerContent: [
       {
         url: "/manufacturing.png",
         title: "Manufacturing",
-        statement:
-        "Products of the manufacturing sector"
+        statement: "Products of the manufacturing sector",
       },
     ],
   },
-   {
-    id: "food-processing",
+  {
+    id: "foodprocessing",
     headerContent: [
       {
         url: "/processing.png",
         title: "Food Processing",
-        statement:
-        "Products of the food processing sector"
+        statement: "Products of the food processing sector",
       },
     ],
   },
