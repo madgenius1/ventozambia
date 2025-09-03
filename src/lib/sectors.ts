@@ -28,6 +28,24 @@ export const sectorList = [
         statement: "Products of the mining sector",
       },
     ],
+    bodyContent: [
+      {
+        img: "/brands/caterpillar.png",
+        name: "Caterpillar",
+        description:
+          "Heavy-duty equipment and machinery for mining operations.",
+      },
+      {
+        img: "/brands/komatsu.png",
+        name: "Komatsu",
+        description:
+          "Reliable earth-moving machines and underground mining solutions.",
+      },
+    ],
+    cta: {
+      text: "Contact Us",
+      link: "/contact",
+    },
   },
   {
     id: "manufacturing",
@@ -38,6 +56,23 @@ export const sectorList = [
         statement: "Products of the manufacturing sector",
       },
     ],
+    bodyContent: [
+      {
+        img: "/brands/siemens.png",
+        name: "Siemens",
+        description:
+          "Automation and control solutions for efficient manufacturing.",
+      },
+      {
+        img: "/brands/bosch.png",
+        name: "Bosch",
+        description: "Precision tools and industrial solutions for factories.",
+      },
+    ],
+    cta: {
+      text: "Contact Us",
+      link: "/contact",
+    },
   },
   {
     id: "foodprocessing",
@@ -48,5 +83,21 @@ export const sectorList = [
         statement: "Products of the food processing sector",
       },
     ],
+    bodyContent: [
+      {
+        img: "/brands/tetra-pak.png",
+        name: "Tetra Pak",
+        description: "Hygienic packaging and processing solutions.",
+      },
+      {
+        img: "/brands/nestle.png",
+        name: "Nestlé",
+        description: "Food safety and quality assurance products.",
+      },
+    ],
+    cta: {
+      text: "Contact Us",
+      link: "/contact",
+    },
   },
 ];

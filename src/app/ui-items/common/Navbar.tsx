@@ -62,7 +62,7 @@ export default function Navbar() {
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex justify-end items-center px-4">
                     <NavigationMenu>
-                        <NavigationMenuList className="space-x-4">
+                        <NavigationMenuList className="space-x-2">
                             {/* Home */}
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
@@ -113,7 +113,7 @@ export default function Navbar() {
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
-                            {/* Products */}
+                            {/* Sectors */}
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger className="font-semibold text-sm text-red-700">
                                     Sectors
