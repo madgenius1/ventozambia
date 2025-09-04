@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { sectorList } from "@/lib/sectors";
 import { sectorMetadata } from "@/lib/metadata";
+import Image from "next/image";
 
 interface SectorPageProps {
     params: Promise<{
@@ -67,10 +68,11 @@ export default async function Page({ params }: SectorPageProps) {
                             key={i}
                             className="flex flex-col items-center text-center bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition"
                         >
-                            <img
+                            <Image
                                 src={item.img}
                                 alt={item.name}
-                                className="h-24 object-contain mb-4"
+                                width={200}
+                                height={150}
                             />
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">
                                 {item.name}
@@ -83,7 +85,7 @@ export default async function Page({ params }: SectorPageProps) {
 
             {/* CTA Section */}
             {sector.cta && (
-                <section className="bg-gray-100 py-12">
+                <section className="bg-gray-100 py-14">
                     <div className="mx-auto max-w-screen-xl px-4 text-center">
                         <h3 className="text-xl font-semibold text-gray-900 mb-4">
                             Ready to explore more?

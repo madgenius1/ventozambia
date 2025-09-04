@@ -30,16 +30,19 @@ export const sectorList = [
     ],
     bodyContent: [
       {
-        img: "/brands/caterpillar.png",
-        name: "Caterpillar",
-        description:
-          "Heavy-duty equipment and machinery for mining operations.",
+        img: "/hififlter.png",
+        name: "Hi-Fi Filters",
+        description: "Heavy-duty filters for prime mining operations.",
       },
       {
-        img: "/brands/komatsu.png",
-        name: "Komatsu",
-        description:
-          "Reliable earth-moving machines and underground mining solutions.",
+        img: "/hydraulicpump.jpg",
+        name: "Hydraulic Pumps",
+        description: "Reliable pumps for all mining solutions.",
+      },
+      {
+        img: "/hiforcetorquesystem.png.",
+        name: "Hi-Force Torque Systems",
+        description: "Torque systems for all mining solutions.",
       },
     ],
     cta: {
@@ -58,15 +61,19 @@ export const sectorList = [
     ],
     bodyContent: [
       {
-        img: "/brands/siemens.png",
-        name: "Siemens",
-        description:
-          "Automation and control solutions for efficient manufacturing.",
+        img: "/hififlter.png",
+        name: "Hi-Fi Filters",
+        description: "Heavy-duty filters for prime mining operations.",
       },
       {
-        img: "/brands/bosch.png",
-        name: "Bosch",
-        description: "Precision tools and industrial solutions for factories.",
+        img: "/hydraulicpump.jpg",
+        name: "Hydraulic Pumps",
+        description: "Reliable pumps for all mining solutions.",
+      },
+      {
+        img: "/hiforcetorquesystem.png.",
+        name: "Hi-Force Torque Systems",
+        description: "Torque systems for all mining solutions.",
       },
     ],
     cta: {
@@ -85,14 +92,19 @@ export const sectorList = [
     ],
     bodyContent: [
       {
-        img: "/brands/tetra-pak.png",
-        name: "Tetra Pak",
-        description: "Hygienic packaging and processing solutions.",
+        img: "/hififlter.png",
+        name: "Hi-Fi Filters",
+        description: "Heavy-duty filters for prime mining operations.",
       },
       {
-        img: "/brands/nestle.png",
-        name: "Nestlé",
-        description: "Food safety and quality assurance products.",
+        img: "/hydraulicpump.jpg",
+        name: "Hydraulic Pumps",
+        description: "Reliable pumps for all mining solutions.",
+      },
+      {
+        img: "/hiforcetorquesystem.png.",
+        name: "Hi-Force Torque Systems",
+        description: "Torque systems for all mining solutions.",
       },
     ],
     cta: {
